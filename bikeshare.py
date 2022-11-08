@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[2]:
+# In[5]:
 
 
 import time
@@ -22,41 +22,33 @@ def get_filters():
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
     print('Hello! Let\'s explore some US bikeshare data!')
-    # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
-    
+       
     citylist = ['chicago', 'new york city', 'washington']
     while True:
-        city =  input("Which city would you like to get data for? \n Chicago, New York City or Washington?: ").lower() # get and process input for a list of names
-        print(city)
+        city =  input("Which city would you like to get data for? \n Chicago, New York City or Washington?: ").lower() 
         if city not in citylist:
-            print('{} not available, please use  Chicago, New York City or Washington'.format(city))
+            print('{} not available, please use Chicago, New York City or Washington'.format(city))
             continue
         else:
-            print('You choose to look on the data for {}'.format(city))
+            print('You choose to look at the data for {}'.format(city))
             break 
         
-    
-    # TO DO: get user input for month (all, january, february, ... , june)
     monthlist = ['january','february','march','april','may','june','all']
     while True:
         month =  input("Name one of the month from January to June you want to filter by, or all to apply no month filter: ").lower() # get and process input for a list of the number of assignments
         if month not in monthlist:
-            print(' {} Your choosen month is not available, please use different month between January and June'.format(city))
+            print(' {} Your choosen month is not available, please use different month between January and June'.format(month))
         else:
             break 
     
-
-    # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
     daylist = ["monday","tuesday","wednesday","thursday","friday","saturday","sunday",'all']
     while True:
-    
         day =  input("name of the day of week to filter by, or all to apply no day filter: ").lower() # get and process input for a list of grades
         if day not in daylist:
-            print('Your choosen day is not available, please use a day between monday and sunday')
+            print(' {} Your choosen day is not available, please use a day between monday and sunday'.format(day))
         else:
             break 
     
-
     print('-'*40)
     return city, month, day
 
@@ -234,4 +226,16 @@ def main():
 
 if __name__ == "__main__":
 	main()
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
 
