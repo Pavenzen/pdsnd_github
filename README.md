@@ -20,8 +20,8 @@ and also be able to see the raw data
 ### Credits
 
 Names not in any specific order:
-Links provided by **Udacitcy, stackoverflow, Hackerrank, Codewars, Numpy userguide,**
-**the 2 _random users_ from google 4 page **
-My company ZF Friedrichshafen AG to be able to participate in this cours
-My colleages Eva and Andy for help and support. 
+- Links provided by **Udacitcy, stackoverflow, Hackerrank, Codewars, Numpy userguide,**
+- **the 2 _random users_ from google 4 page **
+- My company ZF Friedrichshafen AG to be able to participate in this cours
+- My colleages Eva and Andy for help and support. 
 
