@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[5]:
+# In[8]:
 
 
 import time
@@ -11,6 +11,7 @@ import numpy as np
 CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
+monthlist = ['january','february','march','april','may','june','all']
 
 def get_filters():
     """
@@ -33,7 +34,6 @@ def get_filters():
             print('You choose to look at the data for {}'.format(city))
             break 
         
-    monthlist = ['january','february','march','april','may','june','all']
     while True:
         month =  input("Name one of the month from January to June you want to filter by, or all to apply no month filter: ").lower() # get and process input for a list of the number of assignments
         if month not in monthlist:
@@ -54,31 +54,18 @@ def get_filters():
 
 
 def load_data(city, month, day):
-    """
-    Loads data for the specified city and filters by month and day if applicable.
-
-    Args:
-        (str) city - name of the city to analyze
-        (str) month - name of the month to filter by, or "all" to apply no month filter
-        (str) day - name of the day of week to filter by, or "all" to apply no day filter
-    Returns:
-        df - Pandas DataFrame containing city data filtered by month and day
-    """
- # load data file into a dataframe
+ 
+ 
     df = pd.read_csv(CITY_DATA[city])
 
-    # convert the Start Time column to datetime
     df['Start Time'] = pd.to_datetime(df['Start Time'])
 
-    # extract month and day of week from Start Time to create new columns
     df['month'] = df['Start Time'].dt.month
     df['day_of_week'] = df['Start Time'].dt.day_name()
     
     # filter by month if applicable
     if month != 'all':
-        # use the index of the months list to get the corresponding int
-        months = ['january', 'february', 'march', 'april', 'may', 'june']
-        month = months.index(month) + 1
+        month = monthlist.index(month) + 1
 
         # filter by month to create the new dataframe
         df = df[df['month'] == month]
